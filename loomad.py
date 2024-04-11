@@ -1,53 +1,66 @@
 #OLIVER OSTRAT, KEIRO TABUR, TANEL NÕMM
 class Karakter:
-    def _init_(self, nimi, elud, tegevus, kaotaElusi, lisaelusi):
+    def _init_(self, nimi, elud, tugevus):
         self.nimi = nimi
-        self.elud = 100
-        self.tugevus = 20
-        self.kaotaElusi = 30
-        self.lisaelusi = 40
+        self.elud = elud
+        self.tugevus = tugevus
+
+    def kaotasElusi(self, kaotatud_elud):
+        self.elud -= kaotatud_elud
+
+    def lisaElusi(self, lisatud_elud):
+        self.elud += lisatud_elud
+        self.elud < 80
+        self.elud = lisatud_elud + 10
+        print(f"sa taastusid 10 elu!")
+
          
 class vaenlane:
     def __init__(self, elud, tugevus):
         self.elud = elud
         self.tugevus = tugevus
-        elud = 50
-        tugevus = 10
 
-def combat_enemy_goblin():
-    
-    small_goblin_health = 100
-    attack_basic = 100
-    
-    print("You are now in combat with a small goblin!")
-    print("")
-    print("")
-    print("Small Goblin: ", small_goblin_health, "Health Points")
+elud1 = 100
+elud = 100
+tugevus = 20
 
-    while True:
-        try:
-            users_attack = int(input("""
-            Your Moves
-            ----------------------------
-            1 - Basic attack [100]
-           
-            ----------------------------
+print("Sa võitled vaenlasega!")
+print("")
+print("")
+print("Vastane: ", elud, "elud")
+print("Sina:", elud1, "elud")
 
-            What do you choose? """))
-            if  users_attack == 1:
-                print("")
-                print("You use your basic attack")
-                print("")
-                print("The goblin has taken some damage")
-                print("")
-                print("Small Goblin: ", small_goblin_health - 100, "Health points")
-                print("")
+while True:
+    if elud1 <=0:
+        break
+    try:
+        runnak = int(input("""
+        Sinu valik
+        ----------------------------
+        1 - löök [50]
+        2 - liigu edasi
+        ----------------------------
 
-                 
-
-        except:
+        Mida sa valid? """))
+        if  runnak == 1:
+            elud1-=20
+            elud-=50
             print("")
-            print("You cant do that!")
+            print("löö teda")
             print("")
+            print("vastane kaotas elusid")
+            print("")
+            print("Vastane: ", elud, "elud")
+            print("")
+            print("Sina: ", elud1, "elud")
+            print("")
+       
 
-combat_enemy_goblin()
+        elif runnak == 2:
+                        print("")
+                        print(" liikusid edasi")      
+
+    except ValueError:
+        print("")
+        print("Liikusid edasi")
+        print("")
