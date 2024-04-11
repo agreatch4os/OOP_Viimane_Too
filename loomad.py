@@ -14,4 +14,40 @@ class vaenlane:
         elud = 50
         tugevus = 10
 
+def combat_enemy_goblin():
+    
+    small_goblin_health = 100
+    attack_basic = 100
+    
+    print("You are now in combat with a small goblin!")
+    print("")
+    print("")
+    print("Small Goblin: ", small_goblin_health, "Health Points")
 
+    while True:
+        try:
+            users_attack = int(input("""
+            Your Moves
+            ----------------------------
+            1 - Basic attack [100]
+           
+            ----------------------------
+
+            What do you choose? """))
+            if  users_attack == 1:
+                print("")
+                print("You use your basic attack")
+                print("")
+                print("The goblin has taken some damage")
+                print("")
+                print("Small Goblin: ", small_goblin_health - 100, "Health points")
+                print("")
+
+                 
+
+        except:
+            print("")
+            print("You cant do that!")
+            print("")
+
+combat_enemy_goblin()
